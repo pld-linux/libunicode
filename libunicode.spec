@@ -1,11 +1,12 @@
 Summary:	A unicode manipulation library
 Name:		libunicode
 Version:	0.4
-Release:	4
+Release:	5
 License:	LGPL
 Group:		Libraries
 Group(pl):	Biblioteki
 Source0:	http://www.pango.org/download/%{name}-%{version}.tar.gz
+Patch0:		%{name}-unicodeConf.sh.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,8 +42,10 @@ Biblioteki statyczne libunicode.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
+autoconf
 %configure 
 %{__make} 
 
@@ -70,6 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root) %{_bindir}/unicode-config
 %attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/*.sh
 %{_includedir}/*
 
 %files static

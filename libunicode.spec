@@ -2,7 +2,10 @@
 %define snap 20020919
 
 Summary:	A unicode manipulation library
+Summary(ko):	ю╞╢одз╣Е ╤Сюл╨Й╥╞╦╝
 Summary(pl):	Biblioteka do obrСbki unicode
+Summary(ru):	Библиотека Unicode
+Summary(uk):	Б╕бл╕отека Unicode
 Name:		libunicode
 Version:	0.7
 Release:	1.cvs.%{snap}
@@ -22,9 +25,17 @@ A library to handle unicode strings.
 %description -l pl
 Biblioteka obsЁuguj╠ca ci╠gi znakСw unicode.
 
+%description -l ru
+Библиотека для работы со строками символов в unicode.
+
+%description -l uk
+Б╕бл╕отека для роботи з ланцюжками символ╕в в unicode.
+
 %package devel
 Summary:	A unicode manipulation library - development package
 Summary(pl):	Pakiet dla programistСw libunicode
+Summary(ru):	Библиотека Unicode
+Summary(uk):	Б╕бл╕отека Unicode
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 
@@ -32,11 +43,16 @@ Requires:	%{name} = %{version}
 The libunicode-devel package includes header files for the libunicode
 package.
 
-Install libunicode-devel if you want to develop programs which will
-use libunicode.
-
 %description devel -l pl
 Pliki nagЁСwkowe potrzebne do programowania z u©yciem libunicode.
+
+%description devel -l ru
+Пакет libunicode-devel содержит библиотеки и файлы заголовков для
+пакета libunicode.
+
+%description devel -l uk
+Пакет libunicode-devel м╕стить б╕бл╕отеки та файли заголовк╕в для
+пакета libunicode.
 
 %package static
 Summary:	Static libunicode libraries

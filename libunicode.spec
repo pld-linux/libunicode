@@ -1,13 +1,15 @@
 Summary:	A unicode manipulation library
 Name:		libunicode
 Version:	0.4
-Release:	6
+Release:	7
 License:	LGPL
 Group:		Libraries
 Group(pl):	Biblioteki
 Source0:	http://www.pango.org/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-unicodeConf.sh.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_prefix		/usr/X11R6
 
 %description
 A library to handle unicode strings.

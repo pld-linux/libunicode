@@ -10,7 +10,6 @@ License:	LGPL
 Group:		Libraries
 Source0:	http://libunicode.sourceforge.net/src/%{name}-%{snap}.tar.bz2
 #Source0:	http://libunicode.sourceforge.net/src/%{name}-%{version}.tar.gz
-Patch0:		%{name}-unicodeConf.sh.patch
 URL:		http://sourceforge.net/projects/libunicode/
 BuildRequires:	autoconf
 BuildRequires:	automake

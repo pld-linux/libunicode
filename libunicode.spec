@@ -95,7 +95,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README AUTHORS ChangeLog
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
+%{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/*.sh
 %{_includedir}/*
 

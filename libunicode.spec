@@ -53,7 +53,7 @@ Biblioteki statyczne libunicode.
 %patch0 -p1
 
 %build
-libtoolize --copy --force
+%{__libtoolize}
 aclocal
 %{__autoconf}
 rm -f missing

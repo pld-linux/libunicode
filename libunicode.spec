@@ -1,12 +1,15 @@
 Summary:	A unicode manipulation library
 Name:		libunicode
 Version:	0.4
-Release:	7
+Release:	8
 License:	LGPL
 Group:		Libraries
 Group(pl):	Biblioteki
 Source0:	http://www.pango.org/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-unicodeConf.sh.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -49,8 +52,9 @@ Biblioteki statyczne libunicode.
 %build
 libtoolize --copy --force
 aclocal
-automake -a -c
 autoconf
+rm -f missing
+automake -a -c
 %configure 
 %{__make} 
 
@@ -58,8 +62,6 @@ autoconf
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 gzip -9nf README AUTHORS ChangeLog TODO
 

@@ -55,6 +55,7 @@ Biblioteki statyczne libunicode.
 #%patch0 -p1
 
 %build
+rm -f missing
 ./autogen.sh
 %configure
 %{__make}

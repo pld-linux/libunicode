@@ -1,7 +1,7 @@
 Summary:	A unicode manipulation library
 Name:		libunicode
 Version:	0.4
-Release:	5
+Release:	6
 License:	LGPL
 Group:		Libraries
 Group(pl):	Biblioteki
@@ -73,6 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root) %{_bindir}/unicode-config
 %attr(755,root,root) %{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/*.sh
 %{_includedir}/*
 

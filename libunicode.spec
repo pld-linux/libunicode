@@ -1,18 +1,20 @@
+
+%define snap 20020919
+
 Summary:	A unicode manipulation library
 Summary(pl):	Biblioteka do obróbki unicode
 Name:		libunicode
 Version:	0.7
-Release:	1
+Release:	1.cvs.%{snap}
 License:	LGPL
 Group:		Libraries
-Source0:	http://libunicode.sourceforge.net/src/%{name}-%{version}.tar.gz
+Source0:	http://libunicode.sourceforge.net/src/%{name}-%{snap}.tar.bz2
+#Source0:	http://libunicode.sourceforge.net/src/%{name}-%{version}.tar.gz
 URL:		http://sourceforge.net/projects/libunicode/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_prefix		/usr/X11R6
 
 %description
 A library to handle unicode strings.
@@ -49,14 +51,12 @@ Static libunicode libraries.
 Biblioteki statyczne libunicode.
 
 %prep
-%setup -q
+%setup -q -n %{name}
+#%patch0 -p1
 
 %build
-%{__libtoolize}
-aclocal
-%{__autoconf}
 rm -f missing
-%{__automake}
+./autogen.sh
 %configure
 %{__make}
 
@@ -64,6 +64,8 @@ rm -f missing
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_prefix}/X11R6/lib
+install unicodeConf.sh $RPM_BUILD_ROOT%{_prefix}/X11R6/lib
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -78,8 +80,10 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc README AUTHORS ChangeLog
+%attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
+%attr(755,root,root) %{_prefix}/X11R6/lib/unicodeConf.sh
 %{_includedir}/*
 
 %files static

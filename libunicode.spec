@@ -1,11 +1,15 @@
+
+%define snap 20020919
+
 Summary:	A unicode manipulation library
 Summary(pl):	Biblioteka do obróbki unicode
 Name:		libunicode
 Version:	0.7
-Release:	1
+Release:	1.cvs.%{snap}
 License:	LGPL
 Group:		Libraries
-Source0:	http://libunicode.sourceforge.net/src/%{name}-%{version}.tar.gz
+Source0:	http://libunicode.sourceforge.net/src/%{name}-%{snap}.tar.bz2
+#Source0:	http://libunicode.sourceforge.net/src/%{name}-%{version}.tar.gz
 Patch0:		%{name}-unicodeConf.sh.patch
 URL:		http://sourceforge.net/projects/libunicode/
 BuildRequires:	autoconf
@@ -48,15 +52,11 @@ Static libunicode libraries.
 Biblioteki statyczne libunicode.
 
 %prep
-%setup -q
-%patch0 -p1
+%setup -q -n %{name}
+#%patch0 -p1
 
 %build
-%{__libtoolize}
-aclocal
-%{__autoconf}
-rm -f missing
-%{__automake}
+./autogen.sh
 %configure
 %{__make}
 
@@ -80,6 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc README AUTHORS ChangeLog
+%attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
 %attr(755,root,root) %{_prefix}/X11R6/lib/unicodeConf.sh

@@ -12,7 +12,7 @@ Release:	1.cvs.%{snap}.1
 License:	LGPL
 Group:		Libraries
 Source0:	http://libunicode.sourceforge.net/src/%{name}-%{snap}.tar.bz2
-# Source0-md5: 300c7294ec31a10747d5f1e0b94cf6f4
+# Source0-md5:	300c7294ec31a10747d5f1e0b94cf6f4
 #Source0:	http://libunicode.sourceforge.net/src/%{name}-%{version}.tar.gz
 URL:		http://sourceforge.net/projects/libunicode/
 BuildRequires:	autoconf

@@ -5,13 +5,6 @@ Version:	0.4
 Release:	9
 License:	LGPL
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	Библиотеки
-Group(uk):	Б╕бл╕отеки
 Source0:	http://www.pango.org/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-unicodeConf.sh.patch
 BuildRequires:	autoconf
@@ -31,13 +24,6 @@ Biblioteka obsЁuguj╠ca ci╠gi znakСw unicode.
 Summary:	A unicode manipulation library - development package
 Summary(pl):	Pakiet dla programistСw libunicode
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -54,13 +40,6 @@ Pliki nagЁСwkowe potrzebne do programowania z u©yciem libunicode.
 Summary:	Static libunicode libraries
 Summary(pl):	Biblioteki statyczne libunicode
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	Разработка/Библиотеки
-Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static

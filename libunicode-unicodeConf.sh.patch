@@ -1,0 +1,58 @@
+diff -Nru libunicode-0.4/Makefile.am libunicode-0.4.new/Makefile.am
+--- libunicode-0.4/Makefile.am	Sun Jan 30 19:43:05 2000
++++ libunicode-0.4.new/Makefile.am	Tue Sep 26 08:12:26 2000
+@@ -16,6 +16,9 @@
+ include_HEADERS = unicode.h
+ noinst_HEADERS = decomp.h convert.h
+ 
++EXTRA_DIST = \
++	unicodeConf.sh.in
++
+ cvs-dist: maintainer-check
+ 	@if sed 1q $(srcdir)/NEWS | grep -e "$(VERSION)" > /dev/null; then :; else \
+ 	  echo "NEWS not updated; not releasing" 1>&2; \
+@@ -23,3 +26,8 @@
+ 	fi
+ 	cd $(srcdir) && cvs -q tag `echo "Release-$(VERSION)" | sed 's/\./-/g'`
+ 	$(MAKE) distcheck
++
++confexecdir=$(libdir)
++confexec_DATA = unicodeConf.sh
++
++CLEAN_FILES=unicodeConf.sh
+diff -Nru libunicode-0.4/configure.in libunicode-0.4.new/configure.in
+--- libunicode-0.4/configure.in	Sun Jan 30 19:40:11 2000
++++ libunicode-0.4.new/configure.in	Tue Sep 26 08:11:20 2000
+@@ -28,11 +28,20 @@
+ AM_CONDITIONAL(NATIVE_ICONV, test "$have_iconv" = yes)
+ AC_SUBST(UNICODE_DEFS)
+ 
++UNICODE_LIBDIR='-L${libdir}'
++UNICODE_INCLUDEDIR='-I${includedir} ${UNICODE_DEFS}'
++UNICODE_LIBS='-lunicode'
++
++AC_SUBST(UNICODE_LIBDIR)
++AC_SUBST(UNICODE_INCLUDEDIR)
++AC_SUBST(UNICODE_LIBS)
++
+ AC_OUTPUT(Makefile
+ iso/Makefile
+ jis/Makefile
+ msft/Makefile
+ testsuite/Makefile
++unicodeConf.sh
+ unicode-config,
+ [case "$CONFIG_FILES" in
+ *unicode-config*)chmod +x unicode-config;;
+diff -Nru libunicode-0.4/unicodeConf.sh.in libunicode-0.4.new/unicodeConf.sh.in
+--- libunicode-0.4/unicodeConf.sh.in	Thu Jan  1 01:00:00 1970
++++ libunicode-0.4.new/unicodeConf.sh.in	Tue Sep 26 08:10:55 2000
+@@ -0,0 +1,8 @@
++#
++# Configuration file for using the UNICODE library in GNOME applications
++#
++UNICODE_LIBDIR="@UNICODE_LIBDIR@"
++UNICODE_LIBS="@UNICODE_LIBS@"
++UNICODE_INCLUDEDIR="@UNICODE_INCLUDEDIR@"
++MODULE_VERSION="unicode-@VERSION@"
++

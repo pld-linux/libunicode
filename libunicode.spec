@@ -15,6 +15,7 @@ A library to handle unicode strings
 Summary:	A unicode manipulation library
 Group:		Development/Libraries
 Group(pl):	Programowanie/Biblioteki
+Requires:	%{name} = %{version}
 
 %description devel
 The libunicode-devel package includes the static libraries and header

@@ -47,6 +47,9 @@ Biblioteki statyczne libunicode.
 %patch0 -p1
 
 %build
+libtoolize --copy --force
+aclocal
+automake -a -c
 autoconf
 %configure 
 %{__make} 

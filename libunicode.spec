@@ -52,7 +52,6 @@ Biblioteki statyczne libunicode.
 
 %prep
 %setup -q -n %{name}
-#%patch0 -p1
 
 %build
 rm -f missing
@@ -64,8 +63,6 @@ rm -f missing
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_prefix}/X11R6/lib
-install unicodeConf.sh $RPM_BUILD_ROOT%{_prefix}/X11R6/lib
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -83,7 +80,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
-%attr(755,root,root) %{_prefix}/X11R6/lib/unicodeConf.sh
+%attr(755,root,root) %{_libdir}/*.sh
 %{_includedir}/*
 
 %files static

@@ -1,12 +1,13 @@
 Summary:	A unicode manipulation library
 Summary(pl):	Biblioteka do obróbki unicode
 Name:		libunicode
-Version:	0.4
-Release:	9
+Version:	0.7
+Release:	0.1
 License:	LGPL
 Group:		Libraries
-Source0:	http://www.pango.org/download/%{name}-%{version}.tar.gz
-Patch0:		%{name}-unicodeConf.sh.patch
+Source0:	http://libunicode.sourceforge.net/src/%{name}-%{version}.tar.gz
+#Patch0:		%{name}-unicodeConf.sh.patch
+URL:		http://sourceforge.net/projects/libunicode/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -50,7 +51,7 @@ Biblioteki statyczne libunicode.
 
 %prep
 %setup -q
-%patch0 -p1
+#%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -66,8 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf README AUTHORS ChangeLog TODO
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -80,11 +79,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%doc *.gz
-%attr(755,root,root) %{_bindir}/unicode-config
+%doc README AUTHORS ChangeLog
+#%attr(755,root,root) %{_bindir}/unicode-config
 %attr(755,root,root) %{_libdir}/lib*.so
 %attr(755,root,root) %{_libdir}/lib*.la
-%attr(755,root,root) %{_libdir}/*.sh
+#%attr(755,root,root) %{_libdir}/*.sh
 %{_includedir}/*
 
 %files static

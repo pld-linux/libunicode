@@ -8,7 +8,7 @@ Summary(ru):	‚…¬Ã…œ‘≈À¡ Unicode
 Summary(uk):	‚¶¬Ã¶œ‘≈À¡ Unicode
 Name:		libunicode
 Version:	0.7
-Release:	1.cvs.%{snap}
+Release:	1.cvs.%{snap}.1
 License:	LGPL
 Group:		Libraries
 Source0:	http://libunicode.sourceforge.net/src/%{name}-%{snap}.tar.bz2
@@ -38,7 +38,7 @@ Summary(pl):	Pakiet dla programistÛw libunicode
 Summary(ru):	‚…¬Ã…œ‘≈À¡ Unicode
 Summary(uk):	‚¶¬Ã¶œ‘≈À¡ Unicode
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 The libunicode-devel package includes header files for the libunicode
@@ -59,7 +59,7 @@ Pliki nag≥Ûwkowe potrzebne do programowania z uøyciem libunicode.
 Summary:	Static libunicode libraries
 Summary(pl):	Biblioteki statyczne libunicode
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libunicode libraries.
@@ -71,7 +71,6 @@ Biblioteki statyczne libunicode.
 %setup -q -n %{name}
 
 %build
-rm -f missing
 ./autogen.sh
 %configure
 %{__make}
@@ -79,7 +78,8 @@ rm -f missing
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -89,16 +89,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc README AUTHORS ChangeLog
 %attr(755,root,root) %{_libdir}/lib*.so.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%doc README AUTHORS ChangeLog
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/unicode-config
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/*.sh
-%{_includedir}/*
+%{_includedir}/*.h
 
 %files static
 %defattr(644,root,root,755)

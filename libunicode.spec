@@ -2,7 +2,7 @@ Summary:	A unicode manipulation library
 Summary(pl):	Biblioteka do obróbki unicode
 Name:		libunicode
 Version:	0.4
-Release:	8
+Release:	9
 License:	LGPL
 Group:		Libraries
 Group(de):	Libraries

@@ -2,10 +2,10 @@
 %define snap 20020919
 
 Summary:	A unicode manipulation library
-Summary(ko):	ю╞╢одз╣Е ╤Сюл╨Й╥╞╦╝
-Summary(pl):	Biblioteka do obrСbki unicode
-Summary(ru):	Библиотека Unicode
-Summary(uk):	Б╕бл╕отека Unicode
+Summary(ko.UTF-8):   Л°═К▀┬Л╫■К⌠° К²╪Л²╢К╦▄К÷╛К╕╛
+Summary(pl.UTF-8):   Biblioteka do obrцЁbki unicode
+Summary(ru.UTF-8):   п▒п╦п╠п╩п╦п╬я┌п╣п╨п╟ Unicode
+Summary(uk.UTF-8):   п▒я√п╠п╩я√п╬я┌п╣п╨п╟ Unicode
 Name:		libunicode
 Version:	0.7
 Release:	1.cvs.%{snap}.1
@@ -23,20 +23,20 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 A library to handle unicode strings.
 
-%description -l pl
-Biblioteka obsЁuguj╠ca ci╠gi znakСw unicode.
+%description -l pl.UTF-8
+Biblioteka obsе┌ugujд┘ca ciд┘gi znakцЁw unicode.
 
-%description -l ru
-Библиотека для работы со строками символов в unicode.
+%description -l ru.UTF-8
+п▒п╦п╠п╩п╦п╬я┌п╣п╨п╟ п╢п╩я▐ я─п╟п╠п╬я┌я▀ я│п╬ я│я┌я─п╬п╨п╟п╪п╦ я│п╦п╪п╡п╬п╩п╬п╡ п╡ unicode.
 
-%description -l uk
-Б╕бл╕отека для роботи з ланцюжками символ╕в в unicode.
+%description -l uk.UTF-8
+п▒я√п╠п╩я√п╬я┌п╣п╨п╟ п╢п╩я▐ я─п╬п╠п╬я┌п╦ п╥ п╩п╟п╫я├я▌п╤п╨п╟п╪п╦ я│п╦п╪п╡п╬п╩я√п╡ п╡ unicode.
 
 %package devel
 Summary:	A unicode manipulation library - development package
-Summary(pl):	Pakiet dla programistСw libunicode
-Summary(ru):	Библиотека Unicode
-Summary(uk):	Б╕бл╕отека Unicode
+Summary(pl.UTF-8):   Pakiet dla programistцЁw libunicode
+Summary(ru.UTF-8):   п▒п╦п╠п╩п╦п╬я┌п╣п╨п╟ Unicode
+Summary(uk.UTF-8):   п▒я√п╠п╩я√п╬я┌п╣п╨п╟ Unicode
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -44,27 +44,27 @@ Requires:	%{name} = %{version}-%{release}
 The libunicode-devel package includes header files for the libunicode
 package.
 
-%description devel -l pl
-Pliki nagЁСwkowe potrzebne do programowania z u©yciem libunicode.
+%description devel -l pl.UTF-8
+Pliki nagе┌цЁwkowe potrzebne do programowania z uе╪yciem libunicode.
 
-%description devel -l ru
-Пакет libunicode-devel содержит библиотеки и файлы заголовков для
-пакета libunicode.
+%description devel -l ru.UTF-8
+п÷п╟п╨п╣я┌ libunicode-devel я│п╬п╢п╣я─п╤п╦я┌ п╠п╦п╠п╩п╦п╬я┌п╣п╨п╦ п╦ я└п╟п╧п╩я▀ п╥п╟пЁп╬п╩п╬п╡п╨п╬п╡ п╢п╩я▐
+п©п╟п╨п╣я┌п╟ libunicode.
 
-%description devel -l uk
-Пакет libunicode-devel м╕стить б╕бл╕отеки та файли заголовк╕в для
-пакета libunicode.
+%description devel -l uk.UTF-8
+п÷п╟п╨п╣я┌ libunicode-devel п╪я√я│я┌п╦я┌я▄ п╠я√п╠п╩я√п╬я┌п╣п╨п╦ я┌п╟ я└п╟п╧п╩п╦ п╥п╟пЁп╬п╩п╬п╡п╨я√п╡ п╢п╩я▐
+п©п╟п╨п╣я┌п╟ libunicode.
 
 %package static
 Summary:	Static libunicode libraries
-Summary(pl):	Biblioteki statyczne libunicode
+Summary(pl.UTF-8):   Biblioteki statyczne libunicode
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libunicode libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteki statyczne libunicode.
 
 %prep

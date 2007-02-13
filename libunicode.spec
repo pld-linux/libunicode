@@ -2,10 +2,10 @@
 %define snap 20020919
 
 Summary:	A unicode manipulation library
-Summary(ko.UTF-8):   유니코드 라이브러리
-Summary(pl.UTF-8):   Biblioteka do obróbki unicode
-Summary(ru.UTF-8):   Библиотека Unicode
-Summary(uk.UTF-8):   Бібліотека Unicode
+Summary(ko.UTF-8):	유니코드 라이브러리
+Summary(pl.UTF-8):	Biblioteka do obróbki unicode
+Summary(ru.UTF-8):	Библиотека Unicode
+Summary(uk.UTF-8):	Бібліотека Unicode
 Name:		libunicode
 Version:	0.7
 Release:	1.cvs.%{snap}.1
@@ -34,9 +34,9 @@ Biblioteka obsługująca ciągi znaków unicode.
 
 %package devel
 Summary:	A unicode manipulation library - development package
-Summary(pl.UTF-8):   Pakiet dla programistów libunicode
-Summary(ru.UTF-8):   Библиотека Unicode
-Summary(uk.UTF-8):   Бібліотека Unicode
+Summary(pl.UTF-8):	Pakiet dla programistów libunicode
+Summary(ru.UTF-8):	Библиотека Unicode
+Summary(uk.UTF-8):	Бібліотека Unicode
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -57,7 +57,7 @@ Pliki nagłówkowe potrzebne do programowania z użyciem libunicode.
 
 %package static
 Summary:	Static libunicode libraries
-Summary(pl.UTF-8):   Biblioteki statyczne libunicode
+Summary(pl.UTF-8):	Biblioteki statyczne libunicode
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 

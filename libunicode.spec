@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	static_libs	# don't build static library
+#
 
 %define snap 20020919
 
@@ -71,8 +75,10 @@ Biblioteki statyczne libunicode.
 %setup -q -n %{name}
 
 %build
-./autogen.sh
-%configure
+./autogen.sh \
+	%{!?with_static_libs:--disable-static}
+%configure \
+	%{!?with_static_libs:--disable-static}
 %{__make}
 
 %install
@@ -100,6 +106,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/*.sh
 %{_includedir}/*.h
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+%endif
